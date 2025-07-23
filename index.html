@@ -3,40 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <title>FREE FIRE AIM IOS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      background-color: black;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #000000, #1c1c1c);
       color: white;
-      text-align: center;
       font-family: 'Prompt', sans-serif;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
+      overflow: hidden;
     }
-    .red {
-      color: red;
-      font-size: 48px;
+
+    .red-glow {
+      font-size: 3rem;
       font-weight: bold;
-      text-shadow: 0 0 20px red, 0 0 30px red;
-      margin-bottom: 30px;
+      color: #ff0000;
+      text-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000, 0 0 45px #ff5555;
+      animation: pulse 1.5s infinite ease-in-out;
+      margin-bottom: 25px;
     }
-    .white {
-      font-size: 28px;
-      margin-top: 10px;
+
+    .white-text {
+      font-size: 1.5rem;
+      color: #e0e0e0;
+      margin-top: 8px;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        text-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000;
+      }
+      50% {
+        text-shadow: 0 0 25px #ff3333, 0 0 50px #ff3333;
+      }
+    }
+
+    .status-updated {
+      color: #00ff99;
+      text-shadow: 0 0 10px #00ff99;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  <div class="red" id="status">🎯 กำลังเชื่อมระบบลากหัว...</div>
-  <div class="white">FF AIM IOS BY JOHN</div>
-  <div class="white">โปรดรอสักครู่...</div>
+  <div class="red-glow" id="status">🎯 กำลังเชื่อมระบบลากหัว...</div>
+  <div class="white-text">FF AIM IOS BY JOHN</div>
+  <div class="white-text">โปรดรอสักครู่...</div>
 
   <script>
     setTimeout(() => {
-      document.getElementById("status").innerHTML = "✅ <span style='color:red'>เชื่อมต่อแล้ว!</span>";
+      const status = document.getElementById("status");
+      status.innerHTML = "✅ เชื่อมต่อแล้ว!";
+      status.classList.remove("red-glow");
+      status.classList.add("status-updated");
     }, 3000);
   </script>
 </body>
