@@ -1,36 +1,43 @@
-
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Free Fire ดูดหัวเดิมพันตัวแก้ไข</title>
+  <meta charset="UTF-8">
+  <title>FREE FIRE AIM IOS</title>
   <style>
     body {
       background-color: black;
-      color: red;
-      font-family: 'Courier New', monospace;
-      text-align: center;
-      padding-top: 20%;
-    }
-    h1 {
-      font-size: 2.5em;
-      animation: glow 1s infinite alternate;
-    }
-    p {
       color: white;
-      font-size: 1.2em;
-      margin-top: 20px;
+      text-align: center;
+      font-family: 'Prompt', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
     }
-    @keyframes glow {
-      from { text-shadow: 0 0 10px red; }
-      to { text-shadow: 0 0 25px white; }
+    .red {
+      color: red;
+      font-size: 48px;
+      font-weight: bold;
+      text-shadow: 0 0 20px red, 0 0 30px red;
+      margin-bottom: 30px;
+    }
+    .white {
+      font-size: 28px;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
-  <h1>🎯 กำลังเชื่อมระบบลากหัว...</h1>
-  <p>FILE เฉพาะ John Malaka</p>
-  <p>โปรดรอสักครู่...</p>
+  <div class="red" id="status">🎯 กำลังเชื่อมระบบลากหัว...</div>
+  <div class="white">FF AIM IOS BY JOHN</div>
+  <div class="white">โปรดรอสักครู่...</div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById("status").innerHTML = "✅ <span style='color:red'>เชื่อมต่อแล้ว!</span>";
+    }, 3000);
+  </script>
 </body>
 </html>
